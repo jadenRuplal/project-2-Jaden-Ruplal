@@ -2,10 +2,10 @@
 
 Like the previous project this one will be vehicle related. Using the NHTSA APi there will be a main page where you can select different options:
 
-1. search for the list of cars based on the brand (potentially filters to close in on the searches)
-2. search for vrhicles by vin and get its information
-3. add a wishlist where you can add vehicles
-4. see brand information page
+1. user signs up for the first time or signs in
+2. create specific vehicles they want or have currently
+3. comment anything on the vehicles they have
+4. user can comment on other vehicles which other users can see
 
 API:
 
@@ -14,16 +14,36 @@ API:
 
 Routes:
 
-| index | / | get | main page to branch off into your choice
-| favorite | /favorite | get | all vehicles or brands favorited
-| brands | /brands | get | lists all possible brands from api to see
-| vehiclelist | /brands/vehicleList | get | brings you to a page with the vehicles of the selected brand
-| vehicle | /brand/vehicleList/vehicle | get | page of a specific vehile in which its information is shown
+| path                                 | verb   | description                                         |
+| ------------------------------------ | ------ | --------------------------------------------------- |
+| /signup                              | post   | user sign up                                        |
+| ----                                 | ----   | ----                                                |
+| /signin                              | post   | user sign in                                        |
+| ----                                 | ----   | ----                                                |
+| /signup/passwordChange               | update | user changes password                               |
+| ----                                 | ----   | ----                                                |
+| /vehicleList                         | get    | search through vehicles to add to your vehicle list |
+| ----                                 | ----   | ----                                                |
+| /vehicles                            | post   | add vehicles you like or wish to have               |
+| ----                                 | ----   | ----                                                |
+| /vehicles/vehicleID                  | update | edite vehicles you already have picked out          |
+| ----                                 | ----   | ----                                                |
+| /vehicles/vehicleID                  | delete | delete vehicles you already have picked out         |
+| ----                                 | ----   | ----                                                |
+| /vehicles/vehicleID/comments         | post   | post comments on a vehicle                          |
+| ----                                 | ----   | ----                                                |
+| /vehicles/vehicleID/comments/comment | update | update comments on a vehicle                        |
+| ----                                 | ----   | ----                                                |
+| /vehicles/vehicleID/comments/comment | delete | delete comments on a vehicle                        |
+| ----                                 | ----   | ----                                                |
 
 Models:
 user - holds user name and password
 comments - hold comments made on anything from companies to specific vehicles
+savedVehicles - stores all vehicles saved by specific user
 
 Wireframe:
 
-![wireframe](images/wireframe%20project%202.pngwireframe-project-2.png)
+![wireframe](./images/wireframe-project-2.pngwireframe-project-2.png)
+
+![ERD](./images/ERD-Project-2.png)
