@@ -3,7 +3,7 @@
 Like the previous project this one will be vehicle related. Using the NHTSA APi there will be a main page where you can select different options:
 
 1. user signs up for the first time or signs in
-2. create specific vehicles they want or have currently
+2. create specific vehicles they want or have currently using set Schema
 3. comment anything on the vehicles they have
 4. user can comment on other vehicles which other users can see
 
@@ -45,5 +45,7 @@ savedVehicles - stores all vehicles saved by specific user
 Wireframe:
 
 ![wireframe](./images/wireframe-project-2.pngwireframe-project-2.png)
+
+![wireframe2](./images/wireframe-2-project-2.png)
 
 ![ERD](./images/ERD-Project-2.png)
