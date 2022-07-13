@@ -26,4 +26,4 @@ comments - hold comments made on anything from companies to specific vehicles
 
 Wireframe:
 
-![wireframe](/images/wireframe-project-2.png)
+![wireframe](images/wireframe%20project%202.pngwireframe-project-2.png)
