@@ -1,0 +1,31 @@
+{
+  "name": "project-2-jaden-ruplal",
+  "version": "1.0.0",
+  "description": "Like the previous project this one will be vehicle related. Using the NHTSA APi there will be a main page where you can select different options or using a schema create vehicles that will show up on your saved vehicle page with stats like the color what model year ect which you can edit or delete if it's no longer the wave. You and others would have the ability to comment what you want on each others vehicles up to a certain extent with the ability to edit and delete messages.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadenRuplal/project-2-Jaden-Ruplal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadenRuplal/project-2-Jaden-Ruplal/issues"
+  },
+  "homepage": "https://github.com/jadenRuplal/project-2-Jaden-Ruplal#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "liquid": "^5.1.1",
+    "liquid-express-views": "^1.0.8",
+    "method-override": "^2.3.10",
+    "mongoose": "^6.4.4"
+  }
+}
