@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const app = require('liquid-express-views')(express())
 const userRoutes = require('./controller/user_route')
+const vehicleRoutes = require('./controller/vehicle_route')
 
 //middleware
 app.use(methodOverride('_method'))
@@ -31,9 +32,12 @@ app.use(
 // })
 
 app.use('/', userRoutes)
+app.use('/vehicles', vehicleRoutes)
+// app.use('/comments', commentRoutes)
+
 
 app.get('/main', (req, res) => {
-	res.render('index')
+	res.render('users/index')
 })
 
 const PORT = process.env.PORT

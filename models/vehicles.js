@@ -5,7 +5,8 @@ const { Schema, model } = mongoose
 
 const vehicleSchema = new Schema(
 	{
-		name: String,
+		company: String,
+        model: String,
 		color: String,
         year: Number,
 		owner: {

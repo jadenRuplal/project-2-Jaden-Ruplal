@@ -1,0 +1,31 @@
+{% layout 'layout.liquid' %} {% block content %}
+<div class="container-md">
+  <form action="/vehicles" method="POST">
+    <fieldset>
+      <legend>Create A Vehicle</legend>
+      <label class="form-label">Name:</label>
+      <input
+        class="form-control"
+        type="text"
+        name="name"
+        placeholder="enter name"
+      />
+      <label class="form-label">Color:</label>
+      <input
+        class="form-control"
+        type="text"
+        name="color"
+        placeholder="enter color"
+      />
+      <label class="form-label">Year</label>
+      <input
+        class="form-control"
+        type="text"
+        name="Year"
+        placeholder="enter year"
+      />
+    </fieldset>
+    <input type="submit" value="Create New Vehicle" class="btn btn-success" />
+  </form>
+</div>
+{% endblock %}

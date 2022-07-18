@@ -1,9 +1,9 @@
 {% layout 'userlayout.liquid' %} {% block content %}
 
 <div class="container-md">
-  <form action="/signin" method="POST">
+  <form action="/signup" method="POST">
     <fieldset>
-      <legend>Please Login</legend>
+      <legend>Signup</legend>
       <label class="form-label">Username:</label>
       <input type="text" name="username" class="form-control" />
       <label class="form-label">Password:</label>
@@ -11,6 +11,7 @@
     </fieldset>
     <input type="submit" value="Log In" class="btn btn-success" />
   </form>
-  <a href="/signup">First Time? click here</a>
+  <a href="signin">Have an account? Press here</a>
 </div>
+
 {% endblock %}

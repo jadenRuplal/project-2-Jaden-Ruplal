@@ -6,7 +6,7 @@ const router = express.Router()
 
 
 router.get('/signup', (req, res) => {
-    res.render('/users/signup.liquid')
+    res.render('users/signup.liquid')
 })
 
 router.post('/signup', async (req, res) => {
@@ -20,7 +20,7 @@ router.post('/signup', async (req, res) => {
     User.create(req.body)
         .then(user => {
             console.log('this is the new user', user)
-            res.redirect('/main')
+            res.redirect('/signin')
         })
         .catch(error => {
             console.log(error)
@@ -29,7 +29,7 @@ router.post('/signup', async (req, res) => {
 })
 
 router.get('/signin', (req, res) => {
-    res.render('views/login')
+    res.render('users/login')
 })
 
 router.post('/signin', async (req, res) => {

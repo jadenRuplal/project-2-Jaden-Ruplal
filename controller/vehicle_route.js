@@ -42,7 +42,7 @@ router.get('/:id/edit', (req, res) => {
 // })
 
 
-router.get('/new', (req, res) => {
+router.get('vehicles/new', (req, res) => {
     const username = req.session.username
     const loggedIn = req.session.loggedIn
     res.render('vehicles/new', { username, loggedIn })
@@ -50,9 +50,7 @@ router.get('/new', (req, res) => {
 
 
 router.post('/', (req, res) => {
-    req.body.readyToEat = req.body.readyToEat === 'on' ? true : false
 
-    
     req.body.owner = req.session.userId
 
     console.log(req.body)
@@ -80,7 +78,7 @@ router.get('/', (req, res) => {
 router.get('/mine', (req, res) => {
     Fruit.find({ owner: req.session.userId })
         .then(vehicles => {
-            res.render('fruits/index', { vehicles })
+            res.render('vehicles/index', { vehicles })
         })
         .catch(error => {
             console.log(error)
