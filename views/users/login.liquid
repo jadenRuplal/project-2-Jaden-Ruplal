@@ -1,7 +1,9 @@
+{% layout 'layout.liquid' %} {% block content %}
+
 <div class="container-md">
-  <form action="/main" method="POST">
+  <form action="/signin" method="POST">
     <fieldset>
-      <legend>login here</legend>
+      <legend>login</legend>
       <label class="form-label">Username:</label>
       <input type="text" name="username" class="form-control" />
       <label class="form-label">Password:</label>
@@ -9,4 +11,7 @@
     </fieldset>
     <input type="submit" value="Log In" class="btn btn-success" />
   </form>
+  <a href="views/signup">First Time? click here</a>
 </div>
+
+{% endblock %}

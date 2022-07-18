@@ -4,13 +4,12 @@ const bcrypt = require('bcryptjs')
 const router = express.Router()
 
 
-// two sign up routes
-// one GET to show the form
-router.get('/signin', (req, res) => {
-    res.render('views/login')
+
+router.get('/signup', (req, res) => {
+    res.render('/users/signup.liquid')
 })
-// one POST to make the db request
-router.post('/signin', async (req, res) => {
+
+router.post('/signup', async (req, res) => {
     console.log('this is our initial request body', req.body)
     req.body.password = await bcrypt.hash(
         req.body.password,
@@ -29,11 +28,11 @@ router.post('/signin', async (req, res) => {
         })
 })
 
-router.get('/login', (req, res) => {
+router.get('/signin', (req, res) => {
     res.render('views/login')
 })
 
-router.post('/login', async (req, res) => {
+router.post('/signin', async (req, res) => {
     const { username, password } = req.body
     console.log('this is the session', req.session)
     User.findOne({ username })
@@ -45,20 +44,15 @@ router.post('/login', async (req, res) => {
                     req.session.username = username
                     req.session.loggedIn = true
                     req.session.userId = user._id
-                    // redirect to the '/fruits' page
                     console.log('this is the session after login', req.session)
                     res.redirect('/main')
                 } else {
-                    // otherwise(pw incorrect) send an error message
-                    // for now just send some json error
                     res.json({ error: 'username or password incorrect' })
                 }
             } else {
-                // send error if user doesn't exist
                 res.json({ error: 'user does not exist' })
             }
         })
-        // if they don't we'll redirect to the sign up page
         .catch(error => {
             console.log(error)
             res.json(error)
@@ -78,7 +72,4 @@ router.post('/login', async (req, res) => {
 //     })
 // })
 
-///////////////////////////////////////
-// export our router
-///////////////////////////////////////
 module.exports = router
