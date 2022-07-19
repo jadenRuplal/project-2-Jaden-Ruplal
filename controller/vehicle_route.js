@@ -42,7 +42,7 @@ router.get('/:id/edit', (req, res) => {
 // })
 
 
-router.get('vehicles/new', (req, res) => {
+router.get('/new', (req, res) => {
     const username = req.session.username
     const loggedIn = req.session.loggedIn
     res.render('vehicles/new', { username, loggedIn })
@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
     Vehicle.create(req.body)
         .then(vehicle => {
             console.log(vehicle)
-            res.redirect('/vehicles')
+            res.redirect('/vehicles/mine')
         })
         .catch(err => {
             res.json(err)
@@ -65,10 +65,11 @@ router.post('/', (req, res) => {
 })
 
 
-router.get('/', (req, res) => {
+router.get('/mine/:id', (req, res) => {
     Vehicle.find({})
         .then(vehicles => {
-            res.render('vehicles/index', { vehicles })
+            console.log('vehicles', vehicles)
+            res.render('vehicles/showvehicle', { vehicles })
         })
         .catch(err => {
             res.json(err)
@@ -76,9 +77,11 @@ router.get('/', (req, res) => {
 })
 
 router.get('/mine', (req, res) => {
-    Fruit.find({ owner: req.session.userId })
+    console.log('Working')
+    Vehicle.find({ owner: req.session.userId })
         .then(vehicles => {
-            res.render('vehicles/index', { vehicles })
+            console.log('vehicles', vehicles)
+            res.render('vehicles/show', { vehicles })
         })
         .catch(error => {
             console.log(error)
@@ -89,15 +92,15 @@ router.get('/mine', (req, res) => {
 /
 
 
-router.get('/:id', (req, res) => {
+router.get('/mine/:id', (req, res) => {
     const vehicleId = req.params.id
 
     Vehicle.findById(vehicleId)
         .populate('comments.author')
-        .then(fruit => {
+        .then(vehicle => {
             const userId = req.session.userId
             const username = req.session.username
-            res.render('vehicles/show', { vehicle, userId, username })
+            res.render('vehicles/showvehicle', { vehicle, userId, username })
         })
         .catch(err => {
             res.json(err)

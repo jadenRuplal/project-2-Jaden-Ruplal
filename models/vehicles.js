@@ -20,6 +20,6 @@ const vehicleSchema = new Schema(
 )
 
 
-const Vehicle = model('vehicle', vehicleSchema)
+const Vehicle = model('Vehicle', vehicleSchema)
 
 module.exports = Vehicle

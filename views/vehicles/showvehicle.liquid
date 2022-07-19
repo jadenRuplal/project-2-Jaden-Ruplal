@@ -1,0 +1,43 @@
+{% layout 'layout.liquid' %} {% block content %}
+<div class="container-md">
+  <article>
+    <h2>{{ vehicle.company }}</h2>
+    <h3>
+      {{ vehicle.model }}
+    </h3>
+    <h4>Color: {{ vehicle.color }}</h4>
+    <div class="btn-group">
+      <a href="/mine/{{ vehicle._id }}/edit" class="btn btn-primary"
+        >Edit Vehicle</a
+      >
+      <form action="/mine/{{ vehicle._id }}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+      </form>
+    </div>
+  </article>
+  <div class="col-md-6">
+    <form action="/comments/{{ vehicle._id }}" method="POST">
+      <fieldset>
+        <legend>Add comment</legend>
+        <label class="form-label">Comment: </label>
+        <input
+          type="text"
+          class="form-control"
+          name="note"
+          placeholder="Enter comment here"
+        />
+      </fieldset>
+      <input type="submit" class="btn btn-success" value="Add comment" />
+    </form>
+  </div>
+  {% if vehicle.comments.length > 0 %}
+  <div class="container-sm justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      {% for comment in vehicle.comments %} {% render '../comment.liquid'
+      comment: comment, userId: userId, vehicle: vehicle, username: username%}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

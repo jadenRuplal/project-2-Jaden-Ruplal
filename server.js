@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const app = require('liquid-express-views')(express())
 const userRoutes = require('./controller/user_route')
 const vehicleRoutes = require('./controller/vehicle_route')
+const commentRoutes = require('./controller/comment_route')
 
 //middleware
 app.use(methodOverride('_method'))
@@ -23,17 +24,11 @@ app.use(
 	})
 )
 
-// app.get('/', (req, res) => {
-//     res.redirect('/signin')
-// })
-
-// app.get('/signin', (req,res) => {
-//     res.render('views/users/login.liquid')
-// })
 
 app.use('/', userRoutes)
 app.use('/vehicles', vehicleRoutes)
-// app.use('/comments', commentRoutes)
+app.use('/comments', commentRoutes)
+
 
 
 app.get('/main', (req, res) => {

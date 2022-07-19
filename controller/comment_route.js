@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Vehicle = require('../models/vehicles')
+const Vehicle = require('../models/comments')
 
 router.post('/:vehicleId', (req, res) => {
     const vehicleId = req.params.vehicleId
@@ -12,7 +12,7 @@ router.post('/:vehicleId', (req, res) => {
             return vehicle.save()
         })
         .then(vehicle => {
-            res.redirect(`/vehicles/${vehicle._id}`)
+            res.redirect(`/vehicles/mine/${vehicle._id}`)
         })
         .catch(err => {
             res.json(err)

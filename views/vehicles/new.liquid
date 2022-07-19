@@ -3,12 +3,19 @@
   <form action="/vehicles" method="POST">
     <fieldset>
       <legend>Create A Vehicle</legend>
-      <label class="form-label">Name:</label>
+      <label class="form-label">Company:</label>
       <input
         class="form-control"
         type="text"
-        name="name"
-        placeholder="enter name"
+        name="company"
+        placeholder="enter company (EX: Honda, BMW)"
+      />
+      <label class="form-label">Model:</label>
+      <input
+        class="form-control"
+        type="text"
+        name="model"
+        placeholder="enter Model (EX: Accord, Camry)"
       />
       <label class="form-label">Color:</label>
       <input
@@ -17,11 +24,11 @@
         name="color"
         placeholder="enter color"
       />
-      <label class="form-label">Year</label>
+      <label class="form-label">Year:</label>
       <input
         class="form-control"
         type="text"
-        name="Year"
+        name="year"
         placeholder="enter year"
       />
     </fieldset>
