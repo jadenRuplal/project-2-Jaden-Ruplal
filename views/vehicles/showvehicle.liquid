@@ -1,22 +1,20 @@
 {% layout 'layout.liquid' %} {% block content %}
 <div class="container-md">
   <article>
-    <h2>{{ vehicle.company }}</h2>
+    <h2>{{ vehicles.company }}</h2>
     <h3>
-      {{ vehicle.model }}
+      {{ vehicles.model }}
     </h3>
-    <h4>Color: {{ vehicle.color }}</h4>
+    <h4>Color: {{ vehicles.color }}</h4>
     <div class="btn-group">
-      <a href="/mine/{{ vehicle._id }}/edit" class="btn btn-primary"
-        >Edit Vehicle</a
-      >
-      <form action="/mine/{{ vehicle._id }}?_method=DELETE" method="POST">
+      <a href="{{ vehicles._id }}/edit" class="btn btn-primary">Edit Vehicle</a>
+      <form action="{{ vehicles._id }}?_method=DELETE" method="POST">
         <input type="submit" value="Delete" class="btn btn-danger" />
       </form>
     </div>
   </article>
   <div class="col-md-6">
-    <form action="/comments/{{ vehicle._id }}" method="POST">
+    <form action="/comments/{{ vehicles._id }}" method="POST">
       <fieldset>
         <legend>Add comment</legend>
         <label class="form-label">Comment: </label>
@@ -30,11 +28,11 @@
       <input type="submit" class="btn btn-success" value="Add comment" />
     </form>
   </div>
-  {% if vehicle.comments.length > 0 %}
+  {% if vehicles.comments.length > 0 %}
   <div class="container-sm justify-content-center">
     <div class="col-md-8 col-lg-6">
-      {% for comment in vehicle.comments %} {% render '../comment.liquid'
-      comment: comment, userId: userId, vehicle: vehicle, username: username%}
+      {% for comment in vehicles.comments %} {% render '../comment.liquid'
+      comment: comment, userId: userId, vehicle: vehicles, username: username%}
       {% endfor %}
     </div>
   </div>

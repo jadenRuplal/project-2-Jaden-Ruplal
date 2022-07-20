@@ -1,5 +1,5 @@
 const mongoose = require('./connection')
-
+const commentSchema = require('./comments')
 
 const { Schema, model } = mongoose
 
@@ -13,6 +13,7 @@ const vehicleSchema = new Schema(
 			type: Schema.Types.ObjectId, 
 			ref: 'User', 
 		},
+        comments: [commentSchema]
 	},
 	{
 		timestamps: true,
