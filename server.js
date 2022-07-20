@@ -35,7 +35,7 @@ app.get('/main', (req, res) => {
 	res.render('users/index')
 })
 
-const PORT = process.env.PORT
+
 app.listen(process.env.PORT || 3000, () => {
 	console.log(`app is listening on port: ${PORT}`)
 })
