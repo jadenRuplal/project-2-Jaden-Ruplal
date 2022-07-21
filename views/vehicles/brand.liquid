@@ -1,8 +1,8 @@
 {% layout 'layout.liquid' %} {% block content %}
 
-<h1>Ford</h1>
+<h1>Acura</h1>
 <div class="">
-  {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Ford' %}
+  {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Acura' %}
   <div class="card" style="width: 18rem">
     <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
     <h6>Category: {{ vehicleSeed.Category }}</h6>
@@ -10,21 +10,114 @@
   </div>
   {% endif %} {% endfor %}
 
-  <h1>Kia</h1>
+  <h1>Audi</h1>
   <div class="">
-    {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Kia' %}
+    {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Audi' %}
     <div class="card" style="width: 18rem">
       <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
       <h6>Category: {{ vehicleSeed.Category }}</h6>
       <h6>Year: {{ vehicleSeed.Year }}</h6>
     </div>
     {% endif %} {% endfor %}
-  </div>
-  {% endblock %}
 
-  <!-- objectId: String,
+    <h1>BMW</h1>
+    <div class="">
+      {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'BMW' %}
+      <div class="card" style="width: 18rem">
+        <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+        <h6>Category: {{ vehicleSeed.Category }}</h6>
+        <h6>Year: {{ vehicleSeed.Year }}</h6>
+      </div>
+      {% endif %} {% endfor %}
+
+      <h1>Dodge</h1>
+      <div class="">
+        {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Dodge'
+        %}
+        <div class="card" style="width: 18rem">
+          <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+          <h6>Category: {{ vehicleSeed.Category }}</h6>
+          <h6>Year: {{ vehicleSeed.Year }}</h6>
+        </div>
+        {% endif %} {% endfor %}
+
+        <h1>Ford</h1>
+        <div class="">
+          {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Ford'
+          %}
+          <div class="card" style="width: 18rem">
+            <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+            <h6>Category: {{ vehicleSeed.Category }}</h6>
+            <h6>Year: {{ vehicleSeed.Year }}</h6>
+          </div>
+          {% endif %} {% endfor %}
+
+          <h1>Honda</h1>
+          <div class="">
+            {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make ==
+            'Honda' %}
+            <div class="card" style="width: 18rem">
+              <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+              <h6>Category: {{ vehicleSeed.Category }}</h6>
+              <h6>Year: {{ vehicleSeed.Year }}</h6>
+            </div>
+            {% endif %} {% endfor %}
+
+            <h1>Kia</h1>
+            <div class="">
+              {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make ==
+              'Kia' %}
+              <div class="card" style="width: 18rem">
+                <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+                <h6>Category: {{ vehicleSeed.Category }}</h6>
+                <h6>Year: {{ vehicleSeed.Year }}</h6>
+              </div>
+              {% endif %} {% endfor %}
+            </div>
+
+            <h1>Lexus</h1>
+            <div class="">
+              {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make ==
+              'Lexus' %}
+              <div class="card" style="width: 18rem">
+                <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+                <h6>Category: {{ vehicleSeed.Category }}</h6>
+                <h6>Year: {{ vehicleSeed.Year }}</h6>
+              </div>
+              {% endif %} {% endfor %}
+
+              <h1>Mazda</h1>
+              <div class="">
+                {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make ==
+                'MAZDA' %}
+                <div class="card" style="width: 18rem">
+                  <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+                  <h6>Category: {{ vehicleSeed.Category }}</h6>
+                  <h6>Year: {{ vehicleSeed.Year }}</h6>
+                </div>
+                {% endif %} {% endfor %}
+
+                <h1>Nissan</h1>
+                <div class="">
+                  {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make ==
+                  'Nissan' %}
+                  <div class="card" style="width: 18rem">
+                    <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+                    <h6>Category: {{ vehicleSeed.Category }}</h6>
+                    <h6>Year: {{ vehicleSeed.Year }}</h6>
+                  </div>
+                  {% endif %} {% endfor %} {% endblock %}
+                  <!-- objectId: String,
         Year: Number,
         Make: String,
 		Model: String,
         Category: String, -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
