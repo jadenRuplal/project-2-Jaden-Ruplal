@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Vehicle = require('../models/vehicles')
-
+const VehicleSeed = require('../models/vehicleSeed')
 
 router.delete('/mine/:id', (req, res) => {
     const vehicleId = req.params.id
@@ -15,31 +15,31 @@ router.delete('/mine/:id', (req, res) => {
         })
 })
 
-router.get('/:id/edit', (req, res) => {
+router.get('/mine/:id/edit', (req, res) => {
     const vehicleId = req.params.id
 
     Vehicle.findById(vehicleId)
-        .then(vehicle => {
-            res.render('vehicles/edit', { vehicle })
+        .then(vehicles => {
+            res.render('vehicles/edit', { vehicles })
         })
         .catch(err => {
             res.json(err)
         })
 })
 
-// router.put('/:id', (req, res) => {
-//     const vehicleId = req.params.id
+router.put('/mine/:id', (req, res) => {
+    const vehicleId = req.params.id
 
-//     req.body.readyToEat = req.body.readyToEat === 'on' ? true : false
+    Vehicle.findByIdAndUpdate(vehicleId, req.body, { new: true })
+        .then(vehicle => {
+            res.redirect(`/vehicles/mine`)
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
 
-//     Fruit.findByIdAndUpdate(fruitId, req.body, { new: true })
-//         .then(fruit => {
-//             res.redirect(`/fruits/${fruit._id}`)
-//         })
-//         .catch(err => {
-//             res.json(err)
-//         })
-// })
+
 
 
 router.get('/new', (req, res) => {
@@ -91,6 +91,17 @@ router.get('/mine', (req, res) => {
         })
 })
 
+router.get('/brand', (req, res) => {
+    console.log('Working')
+    VehicleSeed.find({})
+        .then(vehicleSeed => {
+            console.log('data', vehicleSeed)
+            res.render('vehicles/brand', {vehicleSeed})
+        })
+        .catch(error => {
+            res.json({ error })
+        })
+})
 
 
 

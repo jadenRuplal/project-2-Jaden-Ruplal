@@ -5,10 +5,11 @@ const { Schema, model } = mongoose
 
 const vehicleSchema = new Schema(
 	{
-		company: String,
+		make: String,
         model: String,
 		color: String,
-        year: Number,
+        year: String,
+        category: String,
 		owner: {
 			type: Schema.Types.ObjectId, 
 			ref: 'User', 

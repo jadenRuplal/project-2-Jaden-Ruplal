@@ -1,0 +1,49 @@
+{% layout 'layout.liquid' %} {% block content %}
+<div class="container-md">
+  <form action="/vehicles/mine/{{ vehicles._id }}?_method=PUT" method="POST">
+    <fieldset>
+      <legend>Edit {{ vehicles.make }} {{ vehicles.model }}</legend>
+      <label class="form-label">Make:</label>
+      <input
+        type="text"
+        name="make"
+        placeholder="enter name"
+        class="form-control"
+        value="{{ vehicles.make }}"
+      />
+      <label class="form-label">Model:</label>
+      <input
+        type="text"
+        name="model"
+        placeholder="enter model"
+        class="form-control"
+        value="{{ vehicles.model }}"
+      />
+      <label class="form-label">Color:</label>
+      <input
+        type="text"
+        name="color"
+        placeholder="enter color"
+        class="form-control"
+        value="{{ vehicles.color }}"
+      />
+      <label class="form-label">Year:</label>
+      <input
+        type="text"
+        name="year"
+        placeholder="enter year"
+        class="form-control"
+        value="{{ vehicles.year }}"
+      />
+    </fieldset>
+    <div class="btn-group">
+      <input
+        type="submit"
+        value="Edit {{ vehicles.name }}"
+        class="btn btn-success"
+      />
+      <a href="/vehicles/mine" class="btn btn-warning">cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

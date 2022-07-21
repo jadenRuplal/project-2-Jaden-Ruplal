@@ -45,7 +45,7 @@ router.post('/signin', async (req, res) => {
                     req.session.loggedIn = true
                     req.session.userId = user._id
                     console.log('this is the session after login', req.session)
-                    res.redirect('/main')
+                    res.redirect('/vehicles/mine')
                 } else {
                     res.json({ error: 'username or password incorrect' })
                 }
@@ -59,17 +59,15 @@ router.post('/signin', async (req, res) => {
         })
 })
 
-// logout route
-// can be a GET that calls destroy on our session
-// we can add an 'are you sure' page if there is time
-// router.get('/logout', (req, res) => {
-//     // destroy the session and redirect to the main page
-//     req.session.destroy(ret => {
-//         console.log('this is returned from req.session.destroy', ret)
-//         console.log('session has been destroyed')
-//         console.log(req.session)
-//         res.redirect('/fruits')
-//     })
-// })
+
+router.get('/logout', (req, res) => {
+    // destroy the session and redirect to the main page
+    req.session.destroy(ret => {
+        console.log('this is returned from req.session.destroy', ret)
+        console.log('session has been destroyed')
+        console.log(req.session)
+        res.redirect('/signin')
+    })
+})
 
 module.exports = router

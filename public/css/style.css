@@ -1,0 +1,16 @@
+.card {
+    margin: 5px;
+    padding: 5px;
+}
+
+body {
+    background-image: url('/public/css/images/tyler-clemmensen-d1Jum1vVLew-unsplash.jpg');
+}
+
+a {
+    margin: 15px;
+}
+
+#logout {
+    margin-left: 70%;
+}

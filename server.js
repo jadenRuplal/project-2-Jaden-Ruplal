@@ -31,8 +31,8 @@ app.use('/comments', commentRoutes)
 
 
 
-app.get('/main', (req, res) => {
-	res.render('users/index')
+app.get('/', (req, res) => {
+	res.redirect('/signin')
 })
 
 const PORT = process.env.PORT

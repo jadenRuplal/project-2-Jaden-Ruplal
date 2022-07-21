@@ -1,0 +1,30 @@
+{% layout 'layout.liquid' %} {% block content %}
+
+<h1>Ford</h1>
+<div class="">
+  {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Ford' %}
+  <div class="card" style="width: 18rem">
+    <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+    <h6>Category: {{ vehicleSeed.Category }}</h6>
+    <h6>Year: {{ vehicleSeed.Year }}</h6>
+  </div>
+  {% endif %} {% endfor %}
+
+  <h1>Kia</h1>
+  <div class="">
+    {% for vehicleSeed in vehicleSeed %} {% if vehicleSeed.Make == 'Kia' %}
+    <div class="card" style="width: 18rem">
+      <h5 class="card-header">Model: {{ vehicleSeed.Model }}</h5>
+      <h6>Category: {{ vehicleSeed.Category }}</h6>
+      <h6>Year: {{ vehicleSeed.Year }}</h6>
+    </div>
+    {% endif %} {% endfor %}
+  </div>
+  {% endblock %}
+
+  <!-- objectId: String,
+        Year: Number,
+        Make: String,
+		Model: String,
+        Category: String, -->
+</div>
