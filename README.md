@@ -22,23 +22,14 @@ Routes:
 | /signup                              | post   | user sign up                                        |
 | /signin                              | post   | user sign in                                        |
 | /signup/passwordChange               | update | user changes password                               |
-| ----                                 | ----   | ----                                                |
 | /vehicleList                         | get    | search through vehicles to add to your vehicle list |
-| ----                                 | ----   | ----                                                |
 | /vehicles                            | post   | add vehicles you like or wish to have               |
-| ----                                 | ----   | ----                                                |
 | /vehicles/vehicleID                  | update | edite vehicles you already have picked out          |
-| ----                                 | ----   | ----                                                |
 | /vehicles/vehicleID                  | get    | get vehicles you already have picked out and saved  |
-| ----                                 | ----   | ----                                                |
 | /vehicles/vehicleID                  | delete | delete vehicles you have picked out                 |
-| ----                                 | ----   | ----                                                |
 | /vehicles/vehicleID/comments         | post   | post comments on a vehicle                          |
-| ----                                 | ----   | ----                                                |
 | /vehicles/vehicleID/comments/comment | update | update comments on a vehicle                        |
-| ----                                 | ----   | ----                                                |
 | /vehicles/vehicleID/comments/comment | delete | delete comments on a vehicle                        |
-| ----                                 | ----   | ----                                                |
 
 Models:
 user - holds user name and password
