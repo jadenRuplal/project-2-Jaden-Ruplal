@@ -15,6 +15,8 @@ API:
 1. https://vpic.nhtsa.dot.gov/api/
 2. https://www.vinaudit.com/api-subscribers?gclid=Cj0KCQjwlK-WBhDjARIsAO2sErQkHMrSnAlEGrMV2eOljzs2_OI229jmOMALDIa4vIkRVeOrlfp_-uIaAhKPEALw_wcB
 
+Although this was planned it didnt go this way instead seeded data is used to show all vehicles
+
 Routes:
 
 | path                                 | verb   | description                                         |
