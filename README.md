@@ -20,9 +20,7 @@ Routes:
 | path                                 | verb   | description                                         |
 | ------------------------------------ | ------ | --------------------------------------------------- |
 | /signup                              | post   | user sign up                                        |
-| ----                                 | ----   | ----                                                |
 | /signin                              | post   | user sign in                                        |
-| ----                                 | ----   | ----                                                |
 | /signup/passwordChange               | update | user changes password                               |
 | ----                                 | ----   | ----                                                |
 | /vehicleList                         | get    | search through vehicles to add to your vehicle list |
