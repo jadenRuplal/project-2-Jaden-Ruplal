@@ -6,16 +6,16 @@ User experience:
 
 1. user signs up for the first time or signs in
 2. create specific vehicles they want or have currently using set Schema
-3. find the ehicles stats based on what is specified
+3. find the vehicles brand list to scroll down and come up with vehicle ideas
 4. comment anything on the vehicles they have
-5. user can comment on other vehicles which other users can see
 
-API:
+PLANS:
 
+original API idea
 1. https://vpic.nhtsa.dot.gov/api/
 2. https://www.vinaudit.com/api-subscribers?gclid=Cj0KCQjwlK-WBhDjARIsAO2sErQkHMrSnAlEGrMV2eOljzs2_OI229jmOMALDIa4vIkRVeOrlfp_-uIaAhKPEALw_wcB
 
-Although this was planned it didnt go this way instead seeded data is used to show all vehicles
+Although this was planned it didnt go this way instead seeded data is used to show a list of vehicles people can scroll through and potentially use. full crud abilities are available when creating a vehicle to add to your list with the ability to add comments to your persenal vehicles.
 
 Routes:
 
